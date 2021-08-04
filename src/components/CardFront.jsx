@@ -6,7 +6,11 @@ const CardFront = ({ items }) => {
       <div className="card__top">
         <img
           className="card__top-img"
-          src={items.sprites.other.dream_world.front_default}
+          src={
+            items.sprites.other.dream_world.front_default
+              ? items.sprites.other.dream_world.front_default
+              : items.sprites.other['official-artwork']['front_default']
+          }
           alt={items.name}
           width="160"
           height="160"

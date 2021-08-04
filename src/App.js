@@ -6,7 +6,7 @@ import Card from './components/Card';
 import './App.css';
 
 function App() {
-  const API = "https://pokeapi.co/api/v2/pokemon"
+  const API = "https://pokeapi.co/api/v2/pokemon?limit=50&offset=0"
   const [pokemonData, setPokemonData] = useState([])
   const [nextPageUrl, setNextPageUrl] = useState('');
   const [prevPageUrl, setPrevPageUrl] = useState('');
@@ -53,16 +53,19 @@ function App() {
     }))
     setPokemonData(_pokemonData);
   }
-  // console.log(pokemonData)
-  if (loading) return "Loading... Please wait"
 
   return (
     <div className="App">
-      <Buttons prev={gotoPrevPage} next={gotoNextPage} />
-      <div className="container">
-      {pokemonData.map((character, i) => <Card props={character} key={i} />)}
-      </div>
-      <Buttons prev={gotoPrevPage} next={gotoNextPage} />
+      {loading ?
+         <div className="loading">Loading... Please wait</div> 
+        : <>
+            <Buttons prev={gotoPrevPage} next={gotoNextPage} />
+            <div className="container">
+              {pokemonData.map((character, i) => <Card props={character} key={i} />)}
+            </div>
+            <Buttons prev={gotoPrevPage} next={gotoNextPage} />
+          </>
+    }
     </div>
   );
 }

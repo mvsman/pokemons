@@ -6,6 +6,14 @@ const CardBack = ({ items }) => {
     base: stat.base_stat,
   }));
 
+  const swapStats = (pos1, pos2, statsArr) => {
+    const temp = statsArr[pos1];
+    statsArr[pos1] = statsArr[pos2];
+    statsArr[pos2] = temp;
+    return statsArr;
+  };
+  const swappedArr = swapStats(0, 4, statsArr);
+
   return (
     <>
       <div className="cardback__info">
@@ -13,7 +21,7 @@ const CardBack = ({ items }) => {
         <div>Weight: {items.weight / 10}kg</div>
       </div>
       <div className="cardback__radar">
-        <RadarChart width={200} height={150} cx="50%" cy="50%" outerRadius="80%" data={statsArr}>
+        <RadarChart width={200} height={150} cx="50%" cy="50%" outerRadius="80%" data={swappedArr}>
           <PolarGrid />
           <PolarAngleAxis dataKey="name" />
           <PolarRadiusAxis />

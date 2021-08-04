@@ -8,14 +8,27 @@ ul {
   list-style: none;
 }
 
+body {
+  margin: 0;
+}
+
 .container {
   font-size: 17px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  margin: 30px auto;
   padding: 0 50px;
+}
+
+.loading {
+  height: 100vh;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blue;
 }
 
 .buttons {
@@ -23,6 +36,15 @@ ul {
   justify-content: center;
   flex-direction: row;
   gap: 10px;
+  margin: 10px 0;
+}
+
+.button {
+  padding: 0;
+  background-color: transparent;
+  color: blue;
+  border: none;
+  cursor: pointer;
 }
 
 .card {
@@ -38,6 +60,13 @@ ul {
   transition: all 1s;
   width: 280px;
   height: 280px;
+}
+
+.card__top-img {
+  -webkit-animation: fade-in 1s ease-in-out;
+  -moz-animation: fade-in 1s ease-in-out;
+  -o-animation: fade-in 1s ease-in-out;
+  animation: fade-in 1s ease-in-out;
 }
 
 .cardback {
@@ -81,6 +110,10 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 5px 0px;
+  -webkit-animation: fade-in 1s ease-in-out;
+  -moz-animation: fade-in 1s ease-in-out;
+  -o-animation: fade-in 1s ease-in-out;
+  animation: fade-in 1s ease-in-out;
 }
 
 .card__bottom-name {
@@ -102,5 +135,39 @@ ul {
 }
 
 .recharts-wrapper {
-  font-size: 16px;
+  width: 100%;
+  font-size: 14px;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade-in {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
 }

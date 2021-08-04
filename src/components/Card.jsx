@@ -8,12 +8,14 @@ const Card = ({ props }) => {
   const func = () => setShow(!show);
 
   return (
-    <div className={!show ? 'card' : 'cardback'}>
-      <div className="card__top-info" onClick={func}>
-        i
+    <>
+      <div className={!show ? 'card' : 'cardback'}>
+        <div className="card__top-info" onClick={func}>
+          i
+        </div>
+        {!show ? <CardFront items={props} /> : <CardBack items={props} />}
       </div>
-      {!show ? <CardFront items={props} /> : <CardBack items={props} />}
-    </div>
+    </>
   );
 };
 
