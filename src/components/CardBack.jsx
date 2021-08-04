@@ -25,7 +25,7 @@ const CardBack = ({ items }) => {
           <PolarGrid />
           <PolarAngleAxis dataKey="name" />
           <PolarRadiusAxis />
-          <Radar name="Mike" dataKey="base" stroke="#8884d8" fill="#8884d8" fillOpacity={0.4} />
+          <Radar name="stats" dataKey="base" stroke="#8884d8" fill="#00f" fillOpacity={0.2} />
         </RadarChart>
       </div>
     </>

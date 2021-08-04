@@ -139,6 +139,15 @@ body {
   font-size: 14px;
 }
 
+.recharts-polar-radius-axis-ticks {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.recharts-polar-radius-axis-tick text {
+  fill: #8184ff;
+}
+
 @-webkit-keyframes fade-in {
   0% {
     opacity: 0.1;
